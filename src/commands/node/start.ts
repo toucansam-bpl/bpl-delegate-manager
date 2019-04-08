@@ -12,7 +12,6 @@ export class NodeStartCommand extends Command {
         process.exit(2)
       }
 
-      console.log(resolve(__dirname, 'bpl-node.ecosystem.config.js'))
       const nodeOptions = {
         args: ['--genesis', 'genesisBlock.mainnet.json', '--config', 'config.mainnet.json'],
         cwd: resolve(homedir(), 'BPL-node'),
