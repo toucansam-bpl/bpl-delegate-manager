@@ -10,7 +10,7 @@ export class NodeStopCommand extends Command {
         process.exit(2)
       }
 
-      stop('bpl-node', err => {
+      stop('bpl-monitor', err => {
         disconnect()
 
         if (err) throw err
