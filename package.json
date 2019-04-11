@@ -50,11 +50,14 @@
       "@oclif/plugin-help"
     ],
     "topics": {
-      "monitor": {
+      "monitor:run": {
         "description": "Checks the BPL Node process to see if it in sync and forging."
       },
       "monitor:start": {
         "description": "Starts the BPL Node monitor."
+      },
+      "monitor:stop": {
+        "description": "Stops the BPL Node monitor."
       }
     }
   },
