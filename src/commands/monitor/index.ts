@@ -7,16 +7,62 @@ import fetch from 'node-fetch'
 
 interface NodeSyncStatus {
   syncing: boolean,
-  blocks: number,
+  height: number,
 }
 
-async function getNodeStatus() : Promise<NodeSyncStatus> {
+async function getNodeSyncStatus(server: string) : Promise<NodeSyncStatus> {
   return new Promise(async (resolve, reject) => {
     try {
-      const raw = await fetch('http://localhost:9030/api/loader/status/sync')
-
+      console.log(`Fetching sync status for ${server}`)
+      const raw = await fetch(`${server}/api/loader/status/sync`)
       const response = await raw.json()
       resolve(response)
+    }
+    catch (ex) {
+      reject(ex)
+    }
+  })
+}
+
+interface NodeStatus {
+  syncing: boolean,
+  outOfSync: boolean,
+}
+
+async function getNodeStatus() : Promise<NodeStatus> {
+  return new Promise(async (resolve, reject) => {
+    let nodeHeight
+    try {
+      const nodeStatus = await getNodeSyncStatus('http://localhost:9030')
+
+      if (nodeStatus.syncing) {
+        return resolve({
+          syncing: true,
+          outOfSync: true,
+        })
+      }
+
+      nodeHeight = nodeStatus.height
+    }
+    catch (ex) {
+      if (ex.code === 'ECONNREFUSED') {
+        // TODO: Warn that node is not running and suggest solution
+        return reject(ex)
+      } else {
+        return reject(ex)
+      }
+    }
+
+    try {
+      const seed01Status = await getNodeSyncStatus('http://s01.mc.blockpool.io')
+      const heightDiff = seed01Status.height - nodeHeight
+
+      console.log(`Height difference: ${heightDiff}`)
+      resolve({
+        syncing: false,
+        // 40 blocks is at least a 10 minute time differential
+        outOfSync: heightDiff > 40,
+      })
     }
     catch (ex) {
       reject(ex)
@@ -27,11 +73,11 @@ async function getNodeStatus() : Promise<NodeSyncStatus> {
 export class MonitorCommand extends Command {
   async run() {
     try {
-      console.log('Fetching BPL Node status.')
+      console.log('Monitoring BPL Node status.')
       const status = await getNodeStatus()
 
-      // 40 blocks is at least a 10 minute time differential
-      if (!status.syncing && status.blocks > 40) {
+      if (!status.syncing && status.outOfSync) {
+        console.log('Node out of sync. Running hook.')
         await this.config.runHook('node-out-of-sync', {})
       }
     }

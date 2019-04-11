@@ -1,6 +1,6 @@
 const util = require('util')
 const exec = util.promisify(require('child_process').exec)
-const tenMinutes = 10 * 60 * 1000
+const fifteenMinutes = 15 * 60 * 1000
 
 console.log(`Starting BPL node monitor...`)
 
@@ -10,4 +10,4 @@ async function checkNodeStatus() {
   console.log('stderr:', stderr)
 }
 
-setInterval(() => checkNodeStatus(), tenMinutes)
+setInterval(() => checkNodeStatus(), fifteenMinutes)
