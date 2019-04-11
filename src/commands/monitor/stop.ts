@@ -2,7 +2,7 @@ import { Command } from '@oclif/command'
 import { connect, disconnect, stop, } from 'pm2'
 
 
-export class NodeStopCommand extends Command {
+export class MonitorStopCommand extends Command {
   async run() {
     connect(err => {
       if (err) {

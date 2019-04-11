@@ -70,7 +70,7 @@ async function getNodeStatus() : Promise<NodeStatus> {
   })
 }
 
-export class MonitorCommand extends Command {
+export class MonitorRunCommand extends Command {
   async run() {
     try {
       console.log('Monitoring BPL Node status.')
