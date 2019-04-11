@@ -54,7 +54,7 @@ async function getNodeStatus() : Promise<NodeStatus> {
     }
 
     try {
-      const seed01Status = await getNodeSyncStatus('http://s01.mc.blockpool.io')
+      const seed01Status = await getNodeSyncStatus('http://s01.mc.blockpool.io:9030')
       const heightDiff = seed01Status.height - nodeHeight
 
       console.log(`Height difference: ${heightDiff}`)
