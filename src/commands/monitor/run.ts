@@ -54,7 +54,7 @@ async function getNodeStatus() : Promise<NodeStatus> {
     }
 
     try {
-      const seed01Status = await getNodeSyncStatus('http://s01.mc.blockpool.io')
+      const seed01Status = await getNodeSyncStatus('http://s01.mc.blockpool.io:9030')
       const heightDiff = seed01Status.height - nodeHeight
 
       console.log(`Height difference: ${heightDiff}`)
@@ -70,7 +70,7 @@ async function getNodeStatus() : Promise<NodeStatus> {
   })
 }
 
-export class MonitorCommand extends Command {
+export class MonitorRunCommand extends Command {
   async run() {
     try {
       console.log('Monitoring BPL Node status.')

@@ -1,13 +1,14 @@
-const util = require('util')
-const exec = util.promisify(require('child_process').exec)
+import { spawn } from 'child_process'
 const fifteenMinutes = 15 * 60 * 1000
 
 console.log(`Starting BPL node monitor...`)
 
 async function checkNodeStatus() {
-  const { stdout, stderr } = await exec('bpl-dms monitor')
-  console.log('stdout:', stdout)
-  console.log('stderr:', stderr)
+  spawn('bpl-dms', ['monitor:run'], { stdio: 'inherit' })
 }
 
 setInterval(() => checkNodeStatus(), fifteenMinutes)
+
+console.log(`BPL node monitor started.`)
+
+checkNodeStatus()

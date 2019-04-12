@@ -19,7 +19,6 @@ export class MonitorStartCommand extends Command {
       }
 
       start(monitorOptions, (err, apps) => {
-        console.log(apps)
         disconnect()
 
         if (err) throw err
