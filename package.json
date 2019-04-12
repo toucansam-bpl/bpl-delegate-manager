@@ -1,7 +1,7 @@
 {
   "name": "bpl-delegate-manager",
   "description": "Blockpool Delegate Manager",
-  "version": "0.0.2-4",
+  "version": "0.5.1-0",
   "author": "toucansam-bpl",
   "bin": {
     "bpl-dms": "./bin/run"
@@ -71,7 +71,7 @@
   },
   "repository": "toucansam-bpl/bpl-delegate-manager",
   "scripts": {
-    "postinstall": "npx pm2 install typescript && npx pm2 install pm2-logrotate",
+    "postinstall": "npx pm2 install typescript",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm tsconfig.tsbuildinfo && rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",

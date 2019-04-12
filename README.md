@@ -19,7 +19,7 @@ $ npm install -g bpl-delegate-manager
 $ bpl-dms COMMAND
 running command...
 $ bpl-dms (-v|--version|version)
-bpl-delegate-manager/0.0.2-4 darwin-x64 node-v11.13.0
+bpl-delegate-manager/0.5.1-0 darwin-x64 node-v11.13.0
 $ bpl-dms --help [COMMAND]
 USAGE
   $ bpl-dms COMMAND
@@ -89,7 +89,7 @@ OPTIONS
   --lines=lines
 ```
 
-_See code: [src/commands/monitor/logs.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/monitor/logs.ts)_
+_See code: [src/commands/monitor/logs.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/monitor/logs.ts)_
 
 ## `bpl-dms monitor:run`
 
@@ -98,7 +98,7 @@ USAGE
   $ bpl-dms monitor:run
 ```
 
-_See code: [src/commands/monitor/run.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/monitor/run.ts)_
+_See code: [src/commands/monitor/run.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/monitor/run.ts)_
 
 ## `bpl-dms monitor:start`
 
@@ -107,7 +107,7 @@ USAGE
   $ bpl-dms monitor:start
 ```
 
-_See code: [src/commands/monitor/start.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/monitor/start.ts)_
+_See code: [src/commands/monitor/start.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/monitor/start.ts)_
 
 ## `bpl-dms monitor:stop`
 
@@ -116,7 +116,7 @@ USAGE
   $ bpl-dms monitor:stop
 ```
 
-_See code: [src/commands/monitor/stop.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/monitor/stop.ts)_
+_See code: [src/commands/monitor/stop.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/monitor/stop.ts)_
 
 ## `bpl-dms node:logs`
 
@@ -128,7 +128,7 @@ OPTIONS
   --lines=lines
 ```
 
-_See code: [src/commands/node/logs.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/node/logs.ts)_
+_See code: [src/commands/node/logs.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/node/logs.ts)_
 
 ## `bpl-dms node:restart`
 
@@ -137,7 +137,7 @@ USAGE
   $ bpl-dms node:restart
 ```
 
-_See code: [src/commands/node/restart.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/node/restart.ts)_
+_See code: [src/commands/node/restart.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/node/restart.ts)_
 
 ## `bpl-dms node:start`
 
@@ -150,7 +150,7 @@ OPTIONS
   --node-dir=node-dir          (required) [default: /Users/bmavity/BPL-node] Directory containing bpl-node code
 ```
 
-_See code: [src/commands/node/start.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/node/start.ts)_
+_See code: [src/commands/node/start.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/node/start.ts)_
 
 ## `bpl-dms node:stop`
 
@@ -159,5 +159,5 @@ USAGE
   $ bpl-dms node:stop
 ```
 
-_See code: [src/commands/node/stop.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.2-4/src/commands/node/stop.ts)_
+_See code: [src/commands/node/stop.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.5.1-0/src/commands/node/stop.ts)_
 <!-- commandsstop -->
