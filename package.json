@@ -71,7 +71,7 @@
   },
   "repository": "toucansam-bpl/bpl-delegate-manager",
   "scripts": {
-    "postinstall": "npx pm2 install typescript",
+    "postinstall": "pm2 install typescript && pm2 install pm2-logrotate",
     "postpack": "rm -f oclif.manifest.json",
     "posttest": "tslint -p . -t stylish",
     "prepack": "rm tsconfig.tsbuildinfo && rm -rf lib && tsc -b && oclif-dev manifest && oclif-dev readme",
