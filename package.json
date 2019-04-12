@@ -1,7 +1,7 @@
 {
   "name": "bpl-delegate-manager",
   "description": "Blockpool Delegate Manager",
-  "version": "0.0.1",
+  "version": "0.0.2-0",
   "author": "toucansam-bpl",
   "bin": {
     "bpl-dms": "./bin/run"
