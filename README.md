@@ -11,6 +11,7 @@ Blockpool Delegate Manager
 <!-- toc -->
 * [Usage](#usage)
 * [Commands](#commands)
+* [Command Topics](#command-topics)
 <!-- tocstop -->
 # Usage
 <!-- usage -->
@@ -28,43 +29,11 @@ USAGE
 <!-- usagestop -->
 # Commands
 <!-- commands -->
-* [`bpl-dms hello [FILE]`](#bpl-dms-hello-file)
-* [`bpl-dms help [COMMAND]`](#bpl-dms-help-command)
+# Command Topics
 
-## `bpl-dms hello [FILE]`
+* [`bpl-dms autocomplete`](docs/autocomplete.md) - display autocomplete installation instructions
+* [`bpl-dms help`](docs/help.md) - display help for bpl-dms
+* [`bpl-dms monitor`](docs/monitor.md)
+* [`bpl-dms node`](docs/node.md)
 
-describe the command here
-
-```
-USAGE
-  $ bpl-dms hello [FILE]
-
-OPTIONS
-  -f, --force
-  -h, --help       show CLI help
-  -n, --name=name  name to print
-
-EXAMPLE
-  $ bpl-dms hello
-  hello world from ./src/hello.ts!
-```
-
-_See code: [src/commands/hello.ts](https://github.com/toucansam-bpl/bpl-delegate-manager/blob/v0.0.1/src/commands/hello.ts)_
-
-## `bpl-dms help [COMMAND]`
-
-display help for bpl-dms
-
-```
-USAGE
-  $ bpl-dms help [COMMAND]
-
-ARGUMENTS
-  COMMAND  command to show help for
-
-OPTIONS
-  --all  see all commands in CLI
-```
-
-_See code: [@oclif/plugin-help](https://github.com/oclif/plugin-help/blob/v2.1.6/src/commands/help.ts)_
 <!-- commandsstop -->
