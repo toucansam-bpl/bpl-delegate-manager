@@ -15,7 +15,7 @@ export class MonitorStartCommand extends Command {
         cwd: resolve(__dirname, '../../monitor'),
         exp_backoff_restart_delay: 100,
         name: 'bpl-monitor',
-        script: 'runner.ts'
+        script: 'runner.js'
       }
 
       start(monitorOptions, (err, apps) => {
