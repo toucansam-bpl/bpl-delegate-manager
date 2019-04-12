@@ -1,7 +1,7 @@
 import { Command } from '@oclif/command'
 import { flags } from '@oclif/parser'
-import { spawn } from 'child_process'
-import { resolve } from 'path'
+
+import runLog from '../../shared/runLog'
 
 
 export class MonitorLogsCommand extends Command {
@@ -11,11 +11,6 @@ export class MonitorLogsCommand extends Command {
 
   async run() {
     const { flags } = this.parse(MonitorLogsCommand)
-    const pm2Path = resolve(__dirname, '..', '..', '..', 'node_modules', 'pm2', 'bin', 'pm2')
-    const commandArgs = ['logs', 'bpl-monitor']
-    const flagArgs = flags.lines ? ['--lines', flags.lines.toString()] : []
-
-    console.log(pm2Path)
-    spawn(pm2Path, commandArgs.concat(flagArgs), { stdio: 'inherit' })
+    runLog('bpl-monitor', flags.lines)
   }
 }

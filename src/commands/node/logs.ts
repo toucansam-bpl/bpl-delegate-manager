@@ -1,6 +1,7 @@
 import { Command } from '@oclif/command'
 import { flags } from '@oclif/parser'
-import { spawn } from 'child_process'
+
+import runLog from '../../shared/runLog'
 
 
 export class NodeLogsCommand extends Command {
@@ -10,9 +11,6 @@ export class NodeLogsCommand extends Command {
 
   async run() {
     const { flags } = this.parse(NodeLogsCommand)
-    const commandArgs = ['pm2', 'logs', 'bpl-node']
-    const flagArgs = flags.lines ? ['--lines', flags.lines.toString()] : []
-
-    spawn('npx', commandArgs.concat(flagArgs), { stdio: 'inherit' })
+    runLog('bpl-node', flags.lines)
   }
 }
